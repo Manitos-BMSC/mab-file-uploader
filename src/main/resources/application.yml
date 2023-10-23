@@ -8,8 +8,9 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     username: ${DB_USER:postgres}
-    password: ${DB_PASSWORD:123456}
-    url: ${DB_URL:jdbc:postgresql://localhost:5434/mab_manitos_db}
+    password: ${DB_PASSWORD:lEtfbOBZDtAg4v7}
+    url: ${DB_URL:jdbc:postgresql://192.241.149.226:5432/db_mab}
+
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
@@ -24,7 +25,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 minio:
-  url: ${MINIO_SERVER_URI:http://localhost:9000}
+  url: ${MINIO_SERVER_URI:http://192.241.149.226:9000}
   access:
-    key: ${MINIO_ACCESS_KEY:fRPjAS1XQXjpLjgT1eFp}
-    secret: ${MINIO_SECRET_KEY:I8hoMgLRRpkkcCIC9CmNsv8ZmUxuYEH5ezv0TJrE}
+    key: ${MINIO_ACCESS_KEY:s9hMvQP8oWmsyBSSGVpn}
+    secret: ${MINIO_SECRET_KEY:bIp3EPP0GfJjUtGOpUy8pYcb7sDNidVXdvB9s6fG}

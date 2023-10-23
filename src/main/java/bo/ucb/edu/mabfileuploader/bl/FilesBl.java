@@ -38,7 +38,10 @@ public class FilesBl {
         s3ObjectRepository.save(s3Object);
         S3Object savedS3Object = s3ObjectRepository.save(s3Object);
         return new FileDto(savedS3Object.getS3ObjectId(), savedS3Object.getContentType(), savedS3Object.getBucket(), savedS3Object.getFileName(), savedS3Object.getStatus());
+    }
 
+    public String getFile(String bucket, String fileName){
+        return minioService.getFile(bucket, fileName);
     }
 
 }

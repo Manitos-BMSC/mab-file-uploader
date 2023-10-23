@@ -2,12 +2,10 @@ package bo.ucb.edu.mabfileuploader.api;
 
 import bo.ucb.edu.mabfileuploader.bl.FilesBl;
 import bo.ucb.edu.mabfileuploader.dto.FileDto;
+import bo.ucb.edu.mabfileuploader.dto.ResponseDto;
 import io.minio.errors.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -33,5 +31,18 @@ public class FilesController {
         FileDto fileDto = filesBl.uploadFile(file, bucket, customFilename);
         logger.info("File uploaded and saved on database");
         return fileDto;
+    }
+
+    @GetMapping()
+    public ResponseDto<String> getFile(@RequestParam String bucket, @RequestParam String fileName){
+        logger.info("GET /api/v1/files");
+        String responseDto = filesBl.getFile(bucket, fileName);
+        ResponseDto<String> response = new ResponseDto<>();
+        response.setSuccess(true);
+        response.setMessage("OK");
+        response.setData(responseDto);
+        logger.info(responseDto);
+
+        return  response;
     }
 }
