@@ -17,7 +17,7 @@ spring:
       ddl-auto: none
     show-sql: true
 server:
-  port: 8020
+  port: 9000
 
 eureka:
   client:
@@ -29,3 +29,12 @@ minio:
   access:
     key: ${MINIO_ACCESS_KEY:s9hMvQP8oWmsyBSSGVpn}
     secret: ${MINIO_SECRET_KEY:bIp3EPP0GfJjUtGOpUy8pYcb7sDNidVXdvB9s6fG}
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+#logging:
+#  pattern:
+#    level: '%5p [${spring.application.name},%X{traceId:-},%X{spanId:-}]'
