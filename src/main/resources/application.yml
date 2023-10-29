@@ -10,12 +10,17 @@ spring:
     username: ${DB_USER:postgres}
     password: ${DB_PASSWORD:lEtfbOBZDtAg4v7}
     url: ${DB_URL:jdbc:postgresql://192.241.149.226:5432/db_mab}
-
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: none
     show-sql: true
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://192.241.149.226:8080/realms/mab-manitos
+          jwk-set-uri: http://192.241.149.226:8080/realms/mab-manitos/protocol/openid-connect/certs
 server:
   port: 8020
 
