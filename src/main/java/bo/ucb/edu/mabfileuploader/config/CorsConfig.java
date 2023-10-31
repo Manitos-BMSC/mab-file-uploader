@@ -8,9 +8,9 @@ import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
 
-@Configuration
+//@Configuration
 public class CorsConfig {
-    @Bean
+    //@Bean
     public CorsFilter corsFilter(){
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(false);
