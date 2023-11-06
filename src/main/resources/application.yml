@@ -40,6 +40,9 @@ management:
   tracing:
     sampling:
       probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://192.241.149.226:9411/api/v2/spans
 
 #logging:
 #  pattern:
