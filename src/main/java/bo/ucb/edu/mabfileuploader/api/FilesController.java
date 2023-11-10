@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.logging.Logger;
 
 @RestController
-@RequestMapping("/api/v1/files")
+    @RequestMapping("/api/v1/files")
 public class FilesController {
 
     @Autowired
@@ -34,15 +34,15 @@ public class FilesController {
     }
 
     @GetMapping()
-    public ResponseDto<String> getFile(@RequestParam String bucket, @RequestParam String fileName){
+    public String getFile(@RequestParam String bucket, @RequestParam String fileName){
         logger.info("GET /api/v1/files");
         String responseDto = filesBl.getFile(bucket, fileName);
-        ResponseDto<String> response = new ResponseDto<>();
-        response.setSuccess(true);
-        response.setMessage("OK");
-        response.setData(responseDto);
+//        ResponseDto<String> response = new ResponseDto<>();
+//        response.setSuccess(true);
+//        response.setMessage("OK");
+//        response.setData(responseDto);
         logger.info(responseDto);
 
-        return  response;
+        return  responseDto;
     }
 }
