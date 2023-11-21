@@ -3,8 +3,8 @@ spring:
     name: mab-file-uploader
   servlet:
     multipart:
-      max-file-size: 100MB   # Set your desired maximum file size here
-      max-request-size: 100MB  # Set the maximum request size here if needed
+      max-file-size: 1000MB   # Set your desired maximum file size here
+      max-request-size: 1000MB  # Set the maximum request size here if needed
   datasource:
     driver-class-name: org.postgresql.Driver
     username: ${DB_USER:postgres}
