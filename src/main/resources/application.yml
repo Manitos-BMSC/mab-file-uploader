@@ -44,6 +44,16 @@ management:
     tracing:
       endpoint:  http://192.241.149.226:9411/api/v2/spans
 
+security-constraints:
+    constraints:
+        - auth-roles:
+            - permitAll
+          security-collections:
+            - name: registroDePacientes
+              patterns:
+                - /api/v1/files
+              methods:
+
 #logging:
 #  pattern:
 #    level: '%5p [${spring.application.name},%X{traceId:-},%X{spanId:-}]'
