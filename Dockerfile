@@ -1,4 +1,4 @@
-FROM arm64v8/eclipse-temurin:17-jdk AS build
+FROM --platform=linux/x86_64 eclipse-temurin:17-jdk AS build
 
 EXPOSE 9000
 
