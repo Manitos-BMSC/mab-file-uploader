@@ -6,10 +6,10 @@
     <springProperty scope="context" name="port" source="server.port" defaultValue="0000"/>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/sebastianbelmonte01/opt/arquitectura/logs/${application}/${application}-${port}.log</file>
+        <file>/opt/logs/${application}/${application}-${port}.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/sebastianbelmonte01/opt/arquitectura/logs/${application}/${application}-${port}.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>/opt/logs/${application}/${application}-${port}.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>1MB</maxFileSize>
